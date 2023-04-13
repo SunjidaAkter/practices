@@ -14,8 +14,7 @@ int main(){
         if(((a-b)/2)<=c-b){
             printf("%lld",b+((a-b)/2));
         }else{
-            printf("%lld",b+((c-b)));
-
+            printf("%lld",b+(c-b));
         }
     }
     return 0;
