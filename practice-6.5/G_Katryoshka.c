@@ -18,7 +18,7 @@ int main(){
                 printf("%lld",c);
             }
         }else{
-                printf("%lld",b);
+            printf("%lld",b);
         }
     }
     return 0;
