@@ -11,10 +11,14 @@ int main(){
             printf("%lld",c);
         }
     }else{
-        if(((a-b)/2)<=c-b){
-            printf("%lld",b+((a-b)/2));
+        if(b<=c){
+            if(((a-b)/2)<=c-b){
+                printf("%lld",b+((a-b)/2));
+            }else{
+                printf("%lld",c);
+            }
         }else{
-            printf("%lld",b+(c-b));
+                printf("%lld",b);
         }
     }
     return 0;
