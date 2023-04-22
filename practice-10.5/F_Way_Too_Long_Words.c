@@ -6,7 +6,7 @@ int main(){
     for(int i=0;i<t;i++){
         char a[100];
         scanf("%s",&a);
-        if(strlen(a)<10){
+        if(strlen(a)<=10){
             printf("%s\n",a);
         }else{
             char first,last;
