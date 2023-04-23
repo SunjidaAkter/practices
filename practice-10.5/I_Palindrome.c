@@ -1,21 +1,23 @@
 #include<stdio.h>
 #include<string.h>
 int main(){
-    char a[1001],b[1001];
+    char a[1001];
     fgets(a,1001,stdin);
-    b[1001]=a[1001];
-    int i=0,j=strlen(a);
+    int is_palindrome=1;
+    int i=0,j=strlen(a)-1;
     while(i<j){
-        char temp=b[i];
-        b[i]=b[j];
-        b[j]=temp;
+        printf("%c %c %d\n",a[i],a[j],j);
+        if(a[i]!=a[j]){
+            is_palindrome=0;
+            break;
+        }
         i++;
         j--;
     }
-    if(a==b){
+    if(is_palindrome){
         printf("YES");
     }else{
-        printf("%s",b);
+        printf("NO");
     }
     return 0;
 }
