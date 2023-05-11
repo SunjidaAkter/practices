@@ -26,6 +26,7 @@ int count_odd(int* a,int n){
     }
     return odd;
 }
+
 int main(){
     int n;
     scanf("%d",&n);
