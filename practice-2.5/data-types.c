@@ -1,5 +1,4 @@
 /*
-
 You need to take two integer values as input and show the summation, subtraction, multiplication and division in the given format below.
 
 For example:
