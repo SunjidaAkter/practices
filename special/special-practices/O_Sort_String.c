@@ -19,6 +19,5 @@ int main(){
             cs[i]--;
         }
     }
-
     return 0;
 }
