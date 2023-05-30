@@ -18,28 +18,3 @@ int main(){
     cout<<count;
     return 0;
 }
-// #include<bits/stdc++.h>
-// using namespace std;
-// int main(){
-//     int count=0;
-//     string s;
-//     getline(cin,s);
-//     stringstream ss;
-//     ss<<s;
-//     string word;
-//     while(ss>>word){
-//         int cnt=0;
-//         for(int i=0;i<word.size();i++){
-//             if(word[i]=='.'||word[i]==','||word[i]=='!'||word[i]=='?'||word[i]==' '){
-//                 cnt++;
-//             }
-//         }
-//         if(cnt==word.size()){
-//             continue;   
-//         }else{
-//             count++;
-//         }
-//     }
-//     cout<<count;
-//     return 0;
-// }
