@@ -1,4 +1,1 @@
 # practices
-
-c
-cpp
