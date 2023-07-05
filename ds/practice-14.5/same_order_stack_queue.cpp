@@ -25,3 +25,32 @@ YES
 
 
 */
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    bool flag=true;
+    stack<int>st;
+    queue<int>q;
+    int m;cin>>m;
+    for(int i=0;i<m;i++){
+        int x;cin>>x;
+        st.push(x);
+    }
+    int n;cin>>n;
+    for(int i=0;i<n;i++){
+        int x;cin>>x;
+        q.push(x);
+    }
+    if(m==n){
+        while (!q.empty()){
+            if(q.front()!=st.top()){
+                flag=false;
+                break;
+            }
+            q.pop();st.pop();
+        }   
+    }else flag=false;
+    if(flag)cout<<"YES";
+    else cout<<"NO";
+    return 0;
+}
