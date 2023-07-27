@@ -11,23 +11,14 @@
  */
 class Solution {
 public:
-    bool isUnivalTree(TreeNode* root) {
+    bool recursion(TreeNode* root,int val){
         if(root==NULL)return true;
-      if(root->left || root->right){
-          if(root->left!=NULL && root->right==NULL){
-              if(root->val==root->left->val)return true;
-              else return false;
-          }else if(root->right!=NULL && root->left==NULL){
-              if(root->val==root->right->val)return true;
-              else return false;
-          }else if(root->right!=NULL && root->left!=NULL){
-              if(root->val==root->right->val==root->left->val)return true;
-              else return false;
-          }else return false;
-      }
-      bool l=isUnivalTree(root->left);  
-      bool r=isUnivalTree(root->right);  
-      if (l==false || r==false)return false;
-      else return true;
+        bool l=recursion(root->left,root->val);
+        bool r=recursion(root->right,root->val);
+        if(root->val!=val)return false;
+        return(l & r);
+    }
+    bool isUnivalTree(TreeNode* root) {
+        return recursion(root,root->val);
     }
 };
