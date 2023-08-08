@@ -24,7 +24,7 @@ void dfs(int u){
     for(int v:adj[u]){
         if(visited[v])continue;
         dfs(v);
-    cout<<v<<" ";
+        cout<<v<<" ";
     }
 }
 int main(){
