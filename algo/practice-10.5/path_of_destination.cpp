@@ -94,7 +94,6 @@ int main(){
         }       
         reverse(path.begin(),path.end());
         for(int i=1;i<path.size();i++){
-            // cout<<path[i-1].first<<" "<<path[i-1].second<<endl;
             if(path[i-1].first==path[i].first){
                 if(path[i-1].second-1==path[i].second){
                     cout<<"L";
