@@ -44,6 +44,15 @@ vector<pii>direc={{0,1},{0,-1},{1,0},{-1,0}};
 bool is_valid(int i,int j){
     return (i>=0&&i<m&&j>=0&&j<n);
 }
+void dfs(int si,int sj){
+    if(!is_valid(si,sj))return;
+    if(visited[si][sj])return;
+    if(g[si][sj]=='x')return;
+    visited[si][sj]=true;
+    for(auto d:direc){
+        dfs(si+d.first,sj+d.second);
+    }
+}
 void bfs(int si,int sj){
     queue<pii>q;
     q.push({si,sj});
@@ -82,8 +91,16 @@ int main(){
         }
         g.push_back(x);
     }
-    bfs(si,sj);
-    if(level[di][dj]!=0){
+
+    //using bfs
+    // bfs(si,sj);
+    // if(level[di][dj]!=0){
+    //     cout<<"YES";
+    // }else cout<<"NO";
+
+    //using dfs
+    dfs(si,sj);
+    if(visited[di][dj]){
         cout<<"YES";
     }else cout<<"NO";
     return 0;
