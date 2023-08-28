@@ -32,7 +32,7 @@ int main(){
             int u=ed.u;
             int v=ed.v;
             int w=ed.w;
-            if(dis[v]<INT_MAX&&dis[u]+w<dis[v]){
+            if(dis[u]<INT_MAX&&dis[u]+w<dis[v]){
                 dis[v]=dis[u]+w;
             }
         }
