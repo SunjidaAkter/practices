@@ -23,7 +23,7 @@ int main(){
     }
     int dis[n+1];
     for(int i=1;i<=n;i++){
-        dis[i]=N;
+        dis[i]=INT_MAX;
     }
     dis[1]=0;
     for(int i=1;i<=n-1;i++){
@@ -32,7 +32,7 @@ int main(){
             int u=ed.u;
             int v=ed.v;
             int w=ed.w;
-            if(dis[u]+w<dis[v]){
+            if(dis[v]<INT_MAX&&dis[u]+w<dis[v]){
                 dis[v]=dis[u]+w;
             }
         }
