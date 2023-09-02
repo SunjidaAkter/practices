@@ -46,14 +46,27 @@ int main(){
         int leaderA=dsu_find(a);
         int leaderB=dsu_find(b);
         if(leaderA==leaderB){
+            // cout<<leaderA<<" "<<leaderB<<endl;
             v1.push_back(val);
+            cnt++;
         }else{
             v2.push_back(val);
-            dsu_union;
+            dsu_union(a,b);
         }
     }
-    cout<<v1.size()<<endl;
-    for(auto val:v1)cout<<val.first<<" "<<val.second<<" ";
-    for(auto val:v2)cout<<val.first<<" "<<val.second<<" ";
+    if(cnt==n-1)cout<<0;
+    else{
+        cout<<v1.size()<<endl;
+        vector<int>leaders;
+        for(int i=1;i<=n;i++){
+            int l=dsu_find(i);
+            if(l==i)leaders.push_back(l);
+        } 
+        int i=0;
+        for(auto val:v1){
+            cout<<val.first<<" "<<val.second<<" "<<leaders[i]<<" "<<leaders[i+1]<<endl;
+            i++;
+        }
+    }
     return 0;
 }
