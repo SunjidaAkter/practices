@@ -28,8 +28,7 @@
 using namespace std;
 typedef pair<int,int>pii;
 #define ll long long
-bool recur(int i,int s){
-    // cout<<s/10<<" ";
+bool recur(ll i,ll s){
     if(s==i)return true;
     else if(i>s) return false;
     return recur(i*10,s)||recur(i*20,s);
@@ -37,7 +36,7 @@ bool recur(int i,int s){
 int main(){
     int n;cin>>n;
     while(n--){
-        int s;cin>>s;
+        ll s;cin>>s;
         if(recur(1,s))cout<<"YES"<<endl;
         else cout<<"NO"<<endl;
     }
