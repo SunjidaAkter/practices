@@ -2,26 +2,44 @@
 // using namespace std;
 // typedef pair<int,int>pii;
 // #define ll long long
+// bool recur(int s){
+//     // cout<<s/10<<" ";
+//     if(s==1)return true;
+//     else if(s==0) return false;
+//     bool op1=false,op2=false;
+//     if(s%10==0){
+//         op1=recur(s/10) ;
+//     }
+//     if(s%20==0){
+//         op2=recur(s/20);
+//     }
+//     return op1|| op2;
+// } 
 // int main(){
 //     int n;cin>>n;
 //     while(n--){
 //         int s;cin>>s;
-//         bool dp[s+1];
-//         dp[1]=true;
-//         for(int i=1;i<=s;i++){
-//             dp[0][i]=false;
-//         }
-//         for(int i=1;i<=s;i++){
-//                 if(a[i-1]<=j){
-//                     dp[i][j]=dp[i-1][j-a[i-1]]||dp[i-1][j+a[i-1]];
-//                 }else{
-//                     dp[i][j]=dp[i-1][j+a[i-1]];
-//                 }
-//             }
-//         }
-//         if(dp[n][s])cout<<"YES";
-//         else cout<<"NO";
-
+//         if(recur(s))cout<<"YES"<<endl;
+//         else cout<<"NO"<<endl;
 //     }
 //     return 0;
 // }
+#include<bits/stdc++.h>
+using namespace std;
+typedef pair<int,int>pii;
+#define ll long long
+bool recur(int i,int s){
+    // cout<<s/10<<" ";
+    if(s==i)return true;
+    else if(i>s) return false;
+    return recur(i*10,s)||recur(i*20,s);
+} 
+int main(){
+    int n;cin>>n;
+    while(n--){
+        int s;cin>>s;
+        if(recur(1,s))cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
+    }
+    return 0;
+}
