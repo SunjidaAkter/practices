@@ -68,7 +68,7 @@ long long size,result;
 long long arr[21];
 bool check(long long sum,long index){
 	if(index == size){
-		 return sum == result;
+		 return (sum == result);
 	}
 	bool route1 = check(sum+arr[index],index+1);
 	bool route2 = check(sum-arr[index],index+1);
