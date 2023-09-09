@@ -6,9 +6,9 @@ int main(){
     int t;cin>>t;
     for(int k=1;k<=t;k++){
         int n;cin>>n;
-        int a[n];
+        ll a[10004];
         for(int i=0;i<n;i++)cin>>a[i];
-        int dp[10004];
+        ll dp[10004];
         dp[0]=a[0];
         dp[1]=max(dp[0],a[1]);
         for(int i=2;i<n;i++){
