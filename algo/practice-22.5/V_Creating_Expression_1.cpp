@@ -64,10 +64,10 @@
 // }
 #include <bits/stdc++.h>
 using namespace std;
-long long size,result;
+long long sz,result;
 long long arr[21];
 bool check(long long sum,long index){
-	if(index == size){
+	if(index == sz){
 		 return (sum == result);
 	}
 	bool route1 = check(sum+arr[index],index+1);
@@ -75,8 +75,8 @@ bool check(long long sum,long index){
 	return route1 || route2;
 }
 int main() {
-	cin>>size>>result;
-	for(int i=0;i<size;i++){
+	cin>>sz>>result;
+	for(int i=0;i<sz;i++){
 		cin>>arr[i];
 	}
 	if(check(arr[0],1)){
