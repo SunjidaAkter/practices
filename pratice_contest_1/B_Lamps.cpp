@@ -11,32 +11,26 @@ using namespace std;
 typedef pair<ll,ll>pii;
 void solve(){
     ll n;cin>>n;
-    vector<pii>a(n);
-    for(ll i=0;i<n;i++)cin>>a[i].first>>a[i].second;
-    sort(all(a),[](pii &a,pii &b){
-        if(a.first==b.first){
-            return a.second>=b.second;
-        }
-        return a.first<=b.first;
-    });
-    ll y=0;
-    ll sum=0,cnt=a[0].first;
-    for(ll j=0;j<a[0].first;j++){
-        if(a[y].first==cnt){
-            sum+=a[y].second;
-            y++;
-        }
+    ll a[n],b[n];
+    for(ll i=0;i<n;i++){
+        cin>>a[i];
+        cin>>b[i];
     }
-    for(ll i=y;i<n;i++){
-        if(a[i].first-a[i-1].first==1){
-            ll x=i;
+    map<ll,vector<ll>>mp;
+    for(ll i=0;i<n;i++){
+        mp[a[i]].push_back(b[i]);
+    }
+    for(ll i=1;i<=n;i++){
+        if(mp[i].empty())continue;
+        sort(all(mp[i]),greater<ll>());
+    }
+    ll sum=0;
+    for(auto it=mp.begin();it!=mp.end();it++){
+        ll cnt=0;
+        for(auto v:it->second){
+            if(cnt==it->first)break;
             cnt++;
-            for(ll j=0;j<a[i].first;j++){
-                if(a[x].first==cnt){
-                    sum+=a[x].second;
-                    x++;
-                }
-            }
+            sum+=v;
         }
     }
     cout<<sum<<nl;
